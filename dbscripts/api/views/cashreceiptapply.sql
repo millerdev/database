@@ -63,7 +63,8 @@ CREATE OR REPLACE RULE "_INSERT" AS
                     WHEN NEW.funds_type='Wire Transfer' THEN 'W'
                     ELSE 'O'
                   END,
-                  NEW.check_document_number),
+                  NEW.check_document_number,
+                  false),
     getAropenId(NEW.customer_number,
                 NEW.doc_type,
                 NEW.doc_number),
